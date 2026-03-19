@@ -1,0 +1,40 @@
+/* Shouto Todoroki Rising — X (Twitter)
+   Even distribution: odd = icy blue, even = fiery red */
+
+:root {
+  --todoroki-ice: #4FC3F7;
+  --todoroki-ice-bg: rgba(79, 195, 247, 0.1);
+  --todoroki-fire: #FF5722;
+  --todoroki-fire-bg: rgba(255, 87, 34, 0.1);
+}
+
+/* Tweet cards */
+article:nth-child(odd) {
+  border-left: 3px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 100%) !important;
+}
+
+article:nth-child(even) {
+  border-left: 3px solid var(--todoroki-fire) !important;
+  background: linear-gradient(90deg, var(--todoroki-fire-bg) 0%, transparent 100%) !important;
+}
+
+/* Timeline items */
+[data-testid="tweet"]:nth-child(odd) {
+  border-left: 3px solid var(--todoroki-ice) !important;
+}
+
+[data-testid="tweet"]:nth-child(even) {
+  border-left: 3px solid var(--todoroki-fire) !important;
+}
+
+/* Sidebar trending / who to follow */
+[data-testid="UserCell"]:nth-child(odd) a,
+[data-testid="UserCell"]:nth-child(odd) span {
+  color: var(--todoroki-ice) !important;
+}
+
+[data-testid="UserCell"]:nth-child(even) a,
+[data-testid="UserCell"]:nth-child(even) span {
+  color: var(--todoroki-fire) !important;
+}

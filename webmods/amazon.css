@@ -1,0 +1,88 @@
+/* Shouto Todoroki Rising — Amazon
+   Theme almost every card. Odd = icy blue, Even = fiery red */
+
+:root {
+  --todoroki-ice: #4FC3F7;
+  --todoroki-ice-bg: rgba(79, 195, 247, 0.2);
+  --todoroki-fire: #FF5722;
+  --todoroki-fire-bg: rgba(255, 87, 34, 0.2);
+}
+
+/* Product cards — search results (multiple grid structures) */
+[data-component-type="s-search-result"]:nth-child(odd),
+.s-result-item[data-asin]:nth-child(odd),
+.s-main-slot .s-result-item:nth-child(odd),
+.s-search-results .s-result-item:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 50%) !important;
+  padding-left: 12px !important;
+}
+
+[data-component-type="s-search-result"]:nth-child(even),
+.s-result-item[data-asin]:nth-child(even),
+.s-main-slot .s-result-item:nth-child(even),
+.s-search-results .s-result-item:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: linear-gradient(90deg, var(--todoroki-fire-bg) 0%, transparent 50%) !important;
+  padding-left: 12px !important;
+}
+
+/* Product titles and links */
+.s-result-item:nth-child(odd) a,
+.s-result-item:nth-child(odd) h2 a {
+  color: var(--todoroki-ice) !important;
+}
+
+.s-result-item:nth-child(even) a,
+.s-result-item:nth-child(even) h2 a {
+  color: var(--todoroki-fire) !important;
+}
+
+/* Deal cards / Today's Deals */
+[data-component-type="s-deal-card"],
+.octopus-pc-item,
+.octopus-pc-asin-info {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: var(--todoroki-ice-bg) !important;
+}
+
+[data-component-type="s-deal-card"]:nth-child(even),
+.octopus-pc-item:nth-child(even) {
+  border-left-color: var(--todoroki-fire) !important;
+  background: var(--todoroki-fire-bg) !important;
+}
+
+/* Category cards / carousel items */
+.a-carousel-card,
+[data-component-type="s-product-image"] {
+  border: 2px solid var(--todoroki-ice) !important;
+}
+
+.a-carousel-card:nth-child(even),
+[data-component-type="s-product-image"]:nth-child(even) {
+  border-color: var(--todoroki-fire) !important;
+}
+
+/* Left sidebar — department links */
+#nav-xshop a,
+#nav-main a {
+  color: var(--todoroki-ice) !important;
+}
+
+#nav-xshop a:nth-child(even),
+#nav-main a:nth-child(even) {
+  color: var(--todoroki-fire) !important;
+}
+
+/* Product detail page — related items */
+[data-component-type="s-similarities-view"],
+.pa-feed-container-item {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: var(--todoroki-ice-bg) !important;
+}
+
+[data-component-type="s-similarities-view"]:nth-child(even),
+.pa-feed-container-item:nth-child(even) {
+  border-left-color: var(--todoroki-fire) !important;
+  background: var(--todoroki-fire-bg) !important;
+}

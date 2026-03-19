@@ -1,0 +1,26 @@
+// Shouto Todoroki — Half Ice, Half Fire
+// Repeating gradient bands so elements show blue→red transition (Opera applies to viewport chunks)
+
+uniform shader iChunk;
+uniform float2 iChunkSize;
+uniform float2 iChunkOffset;
+uniform float2 iContentSize;
+
+// Todoroki's signature colors
+half4 ICY_BLUE = half4(0.31, 0.76, 0.97, 1);
+half4 FIRE_RED = half4(1.0, 0.34, 0.13, 1);
+
+// Gradient repeats every 180px — ensures most buttons/bars span a full blue→red cycle
+const float BAND_WIDTH = 180.0;
+const float BLEND_STRENGTH = 0.45;
+
+half4 main(float2 xy) {
+  half4 original = iChunk.eval(xy);
+  
+  // Use absolute position so gradient is consistent across chunks
+  float2 content_xy = xy + iChunkOffset;
+  float t = fract(content_xy.x / BAND_WIDTH);
+  
+  half4 gradient = mix(ICY_BLUE, FIRE_RED, t);
+  return mix(original, gradient, BLEND_STRENGTH);
+}

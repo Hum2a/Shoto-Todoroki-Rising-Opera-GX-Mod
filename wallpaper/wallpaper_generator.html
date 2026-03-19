@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shouto Todoroki — Wallpaper Generator</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .wallpaper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: linear-gradient(
+        90deg,
+        #0D47A1 0%,
+        #1565C0 15%,
+        #4FC3F7 35%,
+        #81D4FA 50%,
+        #FF8A65 65%,
+        #FF5722 85%,
+        #BF360C 100%
+      );
+      background-size: 400% 100%;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    .wallpaper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 25% 50%, rgba(79, 195, 247, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 50% at 75% 50%, rgba(255, 87, 34, 0.4) 0%, transparent 50%);
+      animation: pulse 4s ease-in-out infinite alternate;
+    }
+    .ice-particles, .fire-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .ice-particles {
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 50px 160px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.6), transparent);
+      background-size: 200px 200px;
+      animation: float 20s linear infinite;
+      opacity: 0.6;
+    }
+    .fire-particles {
+      background-image: 
+        radial-gradient(2px 2px at 1800px 100px, rgba(255,200,100,0.8), transparent),
+        radial-gradient(2px 2px at 1750px 250px, rgba(255,150,50,0.6), transparent),
+        radial-gradient(2px 2px at 1850px 400px, rgba(255,100,50,0.7), transparent),
+        radial-gradient(2px 2px at 1700px 550px, rgba(255,200,100,0.5), transparent),
+        radial-gradient(2px 2px at 1820px 700px, rgba(255,150,50,0.6), transparent);
+      background-size: 200px 200px;
+      animation: float 20s linear infinite reverse;
+      opacity: 0.6;
+    }
+    .center-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: translateX(-50%);
+      animation: shimmer 2s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    @keyframes pulse {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-200px); }
+    }
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wallpaper">
+    <div class="ice-particles"></div>
+    <div class="fire-particles"></div>
+    <div class="center-line"></div>
+  </div>
+</body>
+</html>

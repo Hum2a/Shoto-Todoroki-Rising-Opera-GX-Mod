@@ -1,0 +1,46 @@
+/* Shouto Todoroki Rising — Stack Overflow
+   Odd = icy blue, Even = fiery red */
+
+:root {
+  --todoroki-ice: #4FC3F7;
+  --todoroki-ice-bg: rgba(79, 195, 247, 0.1);
+  --todoroki-fire: #FF5722;
+  --todoroki-fire-bg: rgba(255, 87, 34, 0.1);
+}
+
+/* Question list */
+.js-post-summary:nth-child(odd),
+.s-post-summary:nth-child(odd),
+[data-post-id]:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 40%) !important;
+}
+
+.js-post-summary:nth-child(even),
+.s-post-summary:nth-child(even),
+[data-post-id]:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: linear-gradient(90deg, var(--todoroki-fire-bg) 0%, transparent 40%) !important;
+}
+
+/* Question titles */
+.js-post-summary:nth-child(odd) a.s-link,
+.s-post-summary:nth-child(odd) a {
+  color: var(--todoroki-ice) !important;
+}
+
+.js-post-summary:nth-child(even) a.s-link,
+.s-post-summary:nth-child(even) a {
+  color: var(--todoroki-fire) !important;
+}
+
+/* Sidebar / nav */
+.nav-links a:nth-child(odd),
+.s-navigation a:nth-child(odd) {
+  color: var(--todoroki-ice) !important;
+}
+
+.nav-links a:nth-child(even),
+.s-navigation a:nth-child(even) {
+  color: var(--todoroki-fire) !important;
+}

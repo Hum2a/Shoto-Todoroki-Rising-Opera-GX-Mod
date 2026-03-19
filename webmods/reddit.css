@@ -1,0 +1,65 @@
+/* Shouto Todoroki Rising — Reddit
+   Odd = icy blue, Even = fiery red */
+
+:root {
+  --todoroki-ice: #4FC3F7;
+  --todoroki-ice-bg: rgba(79, 195, 247, 0.18);
+  --todoroki-fire: #FF5722;
+  --todoroki-fire-bg: rgba(255, 87, 34, 0.18);
+}
+
+/* Feed container — target direct children for alternating */
+faceplate-tracker,
+shreddit-feed {
+  display: contents;
+}
+
+/* Posts — use multiple selectors for different Reddit layouts */
+shreddit-post:nth-of-type(odd),
+shreddit-post:nth-child(odd),
+[slot="post"]:nth-of-type(odd),
+article[data-testid="post-container"]:nth-of-type(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 50%) !important;
+}
+
+shreddit-post:nth-of-type(even),
+shreddit-post:nth-child(even),
+[slot="post"]:nth-of-type(even),
+article[data-testid="post-container"]:nth-of-type(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: linear-gradient(90deg, var(--todoroki-fire-bg) 0%, transparent 50%) !important;
+}
+
+/* Comments */
+shreddit-comment:nth-of-type(odd),
+shreddit-comment:nth-child(odd) {
+  border-left: 3px solid var(--todoroki-ice) !important;
+}
+
+shreddit-comment:nth-of-type(even),
+shreddit-comment:nth-child(even) {
+  border-left: 3px solid var(--todoroki-fire) !important;
+}
+
+/* Subreddit list / sidebar links */
+a[href^="/r/"]:nth-of-type(odd),
+a[href*="reddit.com/r/"]:nth-of-type(odd) {
+  color: var(--todoroki-ice) !important;
+}
+
+a[href^="/r/"]:nth-of-type(even),
+a[href*="reddit.com/r/"]:nth-of-type(even) {
+  color: var(--todoroki-fire) !important;
+}
+
+/* Sort/filter bar */
+button:nth-of-type(odd) {
+  color: var(--todoroki-ice) !important;
+  border-color: var(--todoroki-ice) !important;
+}
+
+button:nth-of-type(even) {
+  color: var(--todoroki-fire) !important;
+  border-color: var(--todoroki-fire) !important;
+}
