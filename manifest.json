@@ -1,6 +1,6 @@
 {
   "name": "Shouto Todoroki Rising",
-  "description": "A true homage to Shouto Todoroki — half ice, half fire. Animated wallpaper, epic music, and browser sounds that capture the duality of Plus Ultra.",
+  "description": "A true homage to Shouto Todoroki — half ice, half fire. Animated wallpaper, epic music, and browser sounds that capture the duality of the hellish todoroki family.",
   "developer": {
     "name": "Your Name"
   },
@@ -10,65 +10,29 @@
   "manifest_version": 3,
   "mod": {
     "license": "license.txt",
-    "schema_version": 2,
+    "schema_version": 1,
     "payload": {
       "theme": {
-        "dark": {
-          "gx_accent": {
-            "h": 199,
-            "s": 89,
-            "l": 62
-          },
-          "gx_secondary_base": {
-            "h": 14,
-            "s": 91,
-            "l": 16
-          }
-        },
-        "light": {
-          "gx_accent": {
-            "h": 199,
-            "s": 70,
-            "l": 45
-          },
-          "gx_secondary_base": {
-            "h": 14,
-            "s": 60,
-            "l": 28
-          }
-        }
+        "dark": { "gx_accent": { "h": 199, "s": 89, "l": 62 }, "gx_secondary_base": { "h": 14, "s": 91, "l": 16 } },
+        "light": { "gx_accent": { "h": 199, "s": 70, "l": 45 }, "gx_secondary_base": { "h": 14, "s": 60, "l": 28 } }
       },
-      "fonts": [
-        { "id": "1", "name": "Todoroki", "path": "fonts/todoroki.ttf" }
-      ],
-      "app_icon": [
-        { "id": "1", "name": "Todoroki", "path": "app_icon_290.png" }
-      ],
       "wallpaper": {
-        "dark": {
-          "image": "wallpaper/dark.png",
-          "text_color": "#E3F2FD",
-          "text_shadow": "#0D47A1"
-        },
-        "light": {
-          "image": "wallpaper/dark.png",
-          "text_color": "#0D47A1",
-          "text_shadow": "#E3F2FD"
-        }
+        "dark": { "image": "wallpaper/dark.png", "text_color": "#E3F2FD", "text_shadow": "#0D47A1" },
+        "light": { "image": "wallpaper/dark.png", "text_color": "#0D47A1", "text_shadow": "#E3F2FD" }
       },
       "page_styles": [
-        { "id": "youtube", "css": ["webmods/cursor.css", "webmods/youtube.css"], "matches": ["https://www.youtube.com/*", "https://youtube.com/*", "https://m.youtube.com/*"] },
-        { "id": "github", "css": ["webmods/cursor.css", "webmods/github.css"], "matches": ["https://github.com/*", "https://www.github.com/*", "https://*.github.com/*"] },
-        { "id": "google", "css": ["webmods/cursor.css", "webmods/google.css"], "matches": ["https://www.google.com/*", "https://google.com/*", "https://www.google.co.uk/*"] },
-        { "id": "reddit", "css": ["webmods/cursor.css", "webmods/reddit.css"], "matches": ["https://www.reddit.com/*", "https://reddit.com/*", "https://old.reddit.com/*"] },
-        { "id": "twitter", "css": ["webmods/cursor.css", "webmods/twitter.css"], "matches": ["https://twitter.com/*", "https://x.com/*"] },
-        { "id": "wikipedia", "css": ["webmods/cursor.css", "webmods/wikipedia.css"], "matches": ["https://*.wikipedia.org/*", "https://wikipedia.org/*"] },
-        { "id": "stackoverflow", "css": ["webmods/cursor.css", "webmods/stackoverflow.css"], "matches": ["https://stackoverflow.com/*", "https://*.stackoverflow.com/*", "https://stackexchange.com/*"] },
-        { "id": "twitch", "css": ["webmods/cursor.css", "webmods/twitch.css"], "matches": ["https://www.twitch.tv/*", "https://twitch.tv/*"] },
-        { "id": "discord", "css": ["webmods/cursor.css", "webmods/discord.css"], "matches": ["https://discord.com/*", "https://*.discord.com/*"] },
-        { "id": "amazon", "css": ["webmods/cursor.css", "webmods/amazon.css"], "matches": ["https://www.amazon.com/*", "https://amazon.com/*", "https://*.amazon.co.uk/*"] },
-        { "id": "spotify", "css": ["webmods/cursor.css", "webmods/spotify.css"], "matches": ["https://open.spotify.com/*", "https://*.spotify.com/*"] },
-        { "id": "linkedin", "css": ["webmods/cursor.css", "webmods/linkedin.css"], "matches": ["https://www.linkedin.com/*", "https://linkedin.com/*"] }
+        { "css": ["webmods/cursor.css", "webmods/youtube.css"], "matches": ["https://www.youtube.com/*", "https://youtube.com/*", "https://m.youtube.com/*"] },
+        { "css": ["webmods/cursor.css", "webmods/github.css"], "matches": ["https://github.com/*", "https://www.github.com/*", "https://*.github.com/*"] },
+        { "css": ["webmods/cursor.css", "webmods/google.css"], "matches": ["https://www.google.com/*", "https://google.com/*", "https://www.google.co.uk/*"] },
+        { "css": ["webmods/cursor.css", "webmods/reddit.css"], "matches": ["https://www.reddit.com/*", "https://reddit.com/*", "https://old.reddit.com/*"] },
+        { "css": ["webmods/cursor.css", "webmods/twitter.css"], "matches": ["https://twitter.com/*", "https://x.com/*"] },
+        { "css": ["webmods/cursor.css", "webmods/wikipedia.css"], "matches": ["https://*.wikipedia.org/*", "https://wikipedia.org/*"] },
+        { "css": ["webmods/cursor.css", "webmods/stackoverflow.css"], "matches": ["https://stackoverflow.com/*", "https://*.stackoverflow.com/*", "https://stackexchange.com/*"] },
+        { "css": ["webmods/cursor.css", "webmods/twitch.css"], "matches": ["https://www.twitch.tv/*", "https://twitch.tv/*"] },
+        { "css": ["webmods/cursor.css", "webmods/discord.css"], "matches": ["https://discord.com/*", "https://*.discord.com/*"] },
+        { "css": ["webmods/cursor.css", "webmods/amazon.css"], "matches": ["https://www.amazon.com/*", "https://amazon.com/*", "https://*.amazon.co.uk/*"] },
+        { "css": ["webmods/cursor.css", "webmods/spotify.css"], "matches": ["https://open.spotify.com/*", "https://*.spotify.com/*"] },
+        { "css": ["webmods/cursor.css", "webmods/linkedin.css"], "matches": ["https://www.linkedin.com/*", "https://linkedin.com/*"] }
       ]
     }
   },
