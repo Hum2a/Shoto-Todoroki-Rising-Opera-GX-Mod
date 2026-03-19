@@ -48,12 +48,23 @@ for y in range(SIZE):
             b = int(ICE[2] + (FIRE[2] - ICE[2]) * t)
             pixels[x, y] = (r, g, b, 255)
 
-path = os.path.join(OUTPUT_DIR, "default.png")
-img.save(path)
-print(f"Created: {path}")
+png_path = os.path.join(OUTPUT_DIR, "default.png")
+img.save(png_path)
+print(f"Created: {png_path}")
+
+# Create .cur for Opera GX native cursor (browser-wide)
+try:
+    from win_cur.cursor import Cursor
+    cur = Cursor()
+    cur.add_cursor(img.width, img.height, 28, 28, img.tobytes())  # hotspot at arrow tip
+    cur_path = os.path.join(OUTPUT_DIR, "default.cur")
+    cur.save_file(cur_path)
+    print(f"Created: {cur_path}")
+except ImportError:
+    print("Optional: pip install win-cur to generate cursor/default.cur for native browser cursor")
 
 # Generate base64 and update cursor.css
-with open(path, "rb") as f:
+with open(png_path, "rb") as f:
     data_url = "data:image/png;base64," + base64.b64encode(f.read()).decode()
 
 cursor_css = f'''/* Shouto Todoroki Rising — Custom cursor (ice/fire gradient arrow) */
