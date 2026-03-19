@@ -8,17 +8,58 @@
     "512": "icon_512.png"
   },
   "manifest_version": 3,
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://youtube.com/*",
+    "*://*.github.com/*",
+    "*://github.com/*",
+    "*://*.google.com/*",
+    "*://google.com/*",
+    "*://*.reddit.com/*",
+    "*://reddit.com/*",
+    "*://twitter.com/*",
+    "*://x.com/*",
+    "*://*.wikipedia.org/*",
+    "*://wikipedia.org/*",
+    "*://*.stackoverflow.com/*",
+    "*://stackoverflow.com/*",
+    "*://*.stackexchange.com/*",
+    "*://*.twitch.tv/*",
+    "*://twitch.tv/*",
+    "*://*.discord.com/*",
+    "*://discord.com/*",
+    "*://*.amazon.com/*",
+    "*://*.amazon.co.uk/*",
+    "*://amazon.com/*",
+    "*://*.spotify.com/*",
+    "*://open.spotify.com/*",
+    "*://*.linkedin.com/*",
+    "*://linkedin.com/*"
+  ],
   "mod": {
     "license": "license.txt",
     "schema_version": 1,
     "payload": {
+      "background_music": [
+        "music/Todorokis Counterattack.mp3"
+      ],
       "theme": {
         "dark": { "gx_accent": { "h": 199, "s": 89, "l": 62 }, "gx_secondary_base": { "h": 14, "s": 91, "l": 16 } },
         "light": { "gx_accent": { "h": 199, "s": 70, "l": 45 }, "gx_secondary_base": { "h": 14, "s": 60, "l": 28 } }
       },
       "wallpaper": {
-        "dark": { "image": "wallpaper/dark.png", "text_color": "#E3F2FD", "text_shadow": "#0D47A1" },
-        "light": { "image": "wallpaper/dark.png", "text_color": "#0D47A1", "text_shadow": "#E3F2FD" }
+        "dark": {
+          "image": "wallpaper/shoto-todoroki.3840x2160.mp4",
+          "first_frame": "wallpaper/first_frame_todoroki.jpeg",
+          "text_color": "#E3F2FD",
+          "text_shadow": "#0D47A1"
+        },
+        "light": {
+          "image": "wallpaper/shoto-todoroki.3840x2160.mp4",
+          "first_frame": "wallpaper/first_frame_todoroki.jpeg",
+          "text_color": "#0D47A1",
+          "text_shadow": "#E3F2FD"
+        }
       },
       "page_styles": [
         { "css": ["webmods/cursor.css", "webmods/youtube.css"], "matches": ["https://www.youtube.com/*", "https://youtube.com/*", "https://m.youtube.com/*"] },

@@ -1,42 +1,49 @@
 #!/usr/bin/env python3
 """
-Generates the mod icon (512x512) with Todoroki's ice/fire split.
+Generates the mod icon (512x512) from todoroki.jpg.
 Run: python scripts/generate_icon.py
 """
 import os
 
 try:
-    from PIL import Image, ImageDraw
+    from PIL import Image
 except ImportError:
     print("Install Pillow: pip install Pillow")
     exit(1)
 
 SIZE = 512
-OUTPUT = os.path.join(os.path.dirname(__file__), "..", "icon_512.png")
-# For app_icon (Mods 2.0): 290×290 recommended
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.join(SCRIPT_DIR, "..")
+SRC = os.path.join(PROJECT_ROOT, "todoroki.jpg")
+OUTPUT = os.path.join(PROJECT_ROOT, "icon_512.png")
 APP_ICON_SIZE = 290
-APP_ICON_OUTPUT = os.path.join(os.path.dirname(__file__), "..", "app_icon_290.png")
+APP_ICON_OUTPUT = os.path.join(PROJECT_ROOT, "app_icon_290.png")
 
-img = Image.new("RGB", (SIZE, SIZE))
-draw = ImageDraw.Draw(img)
+if not os.path.exists(SRC):
+    print(f"Source image not found: {SRC}")
+    exit(1)
 
-# Left half: icy blue | Right half: fire red
-for x in range(SIZE):
-    if x < SIZE // 2:
-        color = (79, 195, 247)   # Ice blue
-    else:
-        color = (255, 87, 34)     # Fire red
-    draw.line([(x, 0), (x, SIZE)], fill=color)
+src = Image.open(SRC).convert("RGBA")
+W, H = src.size
 
-# Add a subtle center line (Todoroki's split)
-draw.line([(SIZE//2 - 1, 0), (SIZE//2 - 1, SIZE)], fill=(255, 255, 255, 128))
-draw.line([(SIZE//2, 0), (SIZE//2, SIZE)], fill=(255, 255, 255, 128))
-draw.line([(SIZE//2 + 1, 0), (SIZE//2 + 1, SIZE)], fill=(255, 255, 255, 128))
+# Crop 512x512 from bottom-center to capture Todoroki (character in lower third)
+if W >= SIZE and H >= SIZE:
+    left = max(0, (W - SIZE) // 2)
+    top = max(0, H - SIZE)
+    icon = src.crop((left, top, left + SIZE, top + SIZE))
+else:
+    scale = max(SIZE / W, SIZE / H)
+    new_w, new_h = int(W * scale), int(H * scale)
+    src = src.resize((new_w, new_h), Image.Resampling.LANCZOS)
+    left = (new_w - SIZE) // 2
+    top = max(0, new_h - SIZE)
+    icon = src.crop((left, top, left + SIZE, min(top + SIZE, new_h)))
+    if icon.size != (SIZE, SIZE):
+        icon = icon.resize((SIZE, SIZE), Image.Resampling.LANCZOS)
 
-img.save(OUTPUT)
+icon.save(OUTPUT)
 print(f"Created: {OUTPUT}")
 
-# Also create 290×290 for app_icon (Mods 2.0)
-img_small = img.resize((APP_ICON_SIZE, APP_ICON_SIZE), Image.Resampling.LANCZOS)
-img_small.save(APP_ICON_OUTPUT)
+app = icon.resize((APP_ICON_SIZE, APP_ICON_SIZE), Image.Resampling.LANCZOS)
+app.save(APP_ICON_OUTPUT)
 print(f"Created: {APP_ICON_OUTPUT} (for app_icon payload)")
