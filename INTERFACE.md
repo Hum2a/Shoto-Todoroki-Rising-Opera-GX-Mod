@@ -18,7 +18,7 @@ Scaffolding for all Opera GX Interface categories. Add assets and merge into `ma
 
 ## Enabling Extras
 
-1. Set `"schema_version": 2` in the `mod` section (already in manifest).
+1. Set `"schema_version": 2` in the `mod` section (note: schema 2 has validation issues; mod currently uses schema 1 for reliability).
 2. Copy payload entries from `manifest.interface-extras.json` into `manifest.json` → `payload`.
 3. Add the corresponding asset files.
 
