@@ -1,0 +1,292 @@
+/* Shouto Todoroki Rising — GitHub — Full redesign
+   Odd = icy blue, Even = fiery red */
+
+/* Primer / design tokens — required for modern github.com (same idea as Izuku’s github.css) */
+:root,
+html,
+[data-color-mode="light"],
+[data-color-mode="dark"],
+[data-color-mode="auto"],
+[data-light-theme="light"],
+[data-light-theme="dark"],
+[data-dark-theme="light"],
+[data-dark-theme="dark"] {
+  --color-canvas-default: #0a1628 !important;
+  --color-canvas-subtle: #0f2844 !important;
+  --color-canvas-inset: #051018 !important;
+  --color-accent-subtle: rgba(79, 195, 247, 0.18) !important;
+  --color-accent-muted: rgba(79, 195, 247, 0.45) !important;
+  --color-accent-fg: #4fc3f7 !important;
+  --color-accent-emphasis: #4fc3f7 !important;
+  --color-accent-emphasis-plus: #81d4fa !important;
+  --color-btn-primary-bg: #4fc3f7 !important;
+  --color-btn-primary-hover-bg: #29b6f6 !important;
+  --color-btn-primary-border: #4fc3f7 !important;
+  --color-btn-primary-hover-border: #29b6f6 !important;
+  --color-btn-primary-fg: #051018 !important;
+  --color-btn-primary-hover-fg: #051018 !important;
+  --color-fg-default: #e8eef4 !important;
+  --color-fg-muted: #8eb4d4 !important;
+  --color-fg-subtle: #6b9cc4 !important;
+  --color-border-default: rgba(79, 195, 247, 0.35) !important;
+  --color-border-muted: rgba(79, 195, 247, 0.2) !important;
+  --color-success-fg: #4fc3f7 !important;
+  --color-success-emphasis: #4fc3f7 !important;
+  --color-danger-fg: #ff8a65 !important;
+  --color-done-fg: #4fc3f7 !important;
+  --bgColor-default: #0a1628 !important;
+  --bgColor-muted: #0f2844 !important;
+  --bgColor-accent: rgba(79, 195, 247, 0.28) !important;
+  --fgColor-default: #e8eef4 !important;
+  --fgColor-muted: #8eb4d4 !important;
+  --fgColor-accent: #4fc3f7 !important;
+  --borderColor-default: rgba(79, 195, 247, 0.35) !important;
+}
+
+body,
+html,
+.application-main,
+.Layout,
+.Layout-main,
+.Layout-sidebar,
+[data-turbo-body] {
+  background-color: #0a1628 !important;
+  --bgColor-default: #0a1628 !important;
+  --color-canvas-default: #0a1628 !important;
+}
+
+:root {
+  --todoroki-ice: #4FC3F7;
+  --todoroki-ice-bg: rgba(79, 195, 247, 0.25);
+  --todoroki-ice-hover: rgba(79, 195, 247, 0.4);
+  --todoroki-fire: #FF5722;
+  --todoroki-fire-bg: rgba(255, 87, 34, 0.25);
+  --todoroki-fire-hover: rgba(255, 87, 34, 0.4);
+}
+
+/* === HEADER / NAV === */
+.Header,
+header,
+[data-test-selector="repo-header"] {
+  background: linear-gradient(90deg, #0D47A1 0%, #4FC3F7 50%, #FF5722 100%) !important;
+  border-bottom: 2px solid var(--todoroki-ice) !important;
+}
+
+.Header a,
+header a,
+[data-test-selector="repo-header"] a {
+  color: white !important;
+}
+
+.Header a:hover,
+header a:hover {
+  color: var(--todoroki-ice) !important;
+  text-shadow: 0 0 8px rgba(79, 195, 247, 0.8) !important;
+}
+
+/* Search bar */
+[data-test-selector="nav-search-input"],
+input[type="search"],
+.Header-search {
+  border: 2px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 100%) !important;
+}
+
+[data-test-selector="nav-search-input"]:focus,
+input[type="search"]:focus {
+  border-color: var(--todoroki-fire) !important;
+  box-shadow: 0 0 0 3px var(--todoroki-fire-bg) !important;
+}
+
+/* === REPO LIST / BOX === */
+.Box .Box-row:nth-child(odd),
+.Box-row:nth-child(odd),
+[data-testid="repo-row"]:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 40%) !important;
+}
+
+.Box .Box-row:nth-child(odd):hover,
+.Box-row:nth-child(odd):hover {
+  background: linear-gradient(90deg, var(--todoroki-ice-hover) 0%, transparent 40%) !important;
+  box-shadow: inset 0 0 0 1px var(--todoroki-ice) !important;
+}
+
+.Box .Box-row:nth-child(even),
+.Box-row:nth-child(even),
+[data-testid="repo-row"]:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: linear-gradient(90deg, var(--todoroki-fire-bg) 0%, transparent 40%) !important;
+}
+
+.Box .Box-row:nth-child(even):hover,
+.Box-row:nth-child(even):hover {
+  background: linear-gradient(90deg, var(--todoroki-fire-hover) 0%, transparent 40%) !important;
+  box-shadow: inset 0 0 0 1px var(--todoroki-fire) !important;
+}
+
+.Box-row:nth-child(odd) a,
+.Box-row:nth-child(odd) .Link {
+  color: var(--todoroki-ice) !important;
+}
+
+.Box-row:nth-child(even) a,
+.Box-row:nth-child(even) .Link {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === FILE EXPLORER === */
+.js-navigation-item:nth-child(odd),
+[role="row"]:nth-child(odd) {
+  border-left: 3px solid var(--todoroki-ice) !important;
+}
+
+.js-navigation-item:nth-child(odd):hover,
+.js-navigation-item:nth-child(odd).selected {
+  background: var(--todoroki-ice-bg) !important;
+}
+
+.js-navigation-item:nth-child(odd) .js-navigation-open,
+[role="row"]:nth-child(odd) a {
+  color: var(--todoroki-ice) !important;
+}
+
+.js-navigation-item:nth-child(even),
+[role="row"]:nth-child(even) {
+  border-left: 3px solid var(--todoroki-fire) !important;
+}
+
+.js-navigation-item:nth-child(even):hover,
+.js-navigation-item:nth-child(even).selected {
+  background: var(--todoroki-fire-bg) !important;
+}
+
+.js-navigation-item:nth-child(even) .js-navigation-open,
+[role="row"]:nth-child(even) a {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === TABS === */
+[role="tab"]:nth-child(odd),
+.tabnav-tab:nth-child(odd),
+.UnderlineNav-item:nth-child(odd) {
+  color: var(--todoroki-ice) !important;
+  border-color: transparent !important;
+}
+
+[role="tab"]:nth-child(odd).selected,
+.tabnav-tab:nth-child(odd).selected,
+.UnderlineNav-item:nth-child(odd)[aria-current="page"] {
+  color: var(--todoroki-ice) !important;
+  border-bottom-color: var(--todoroki-ice) !important;
+  font-weight: 600 !important;
+}
+
+[role="tab"]:nth-child(even),
+.tabnav-tab:nth-child(even),
+.UnderlineNav-item:nth-child(even) {
+  color: var(--todoroki-fire) !important;
+}
+
+[role="tab"]:nth-child(even).selected,
+.tabnav-tab:nth-child(even).selected,
+.UnderlineNav-item:nth-child(even)[aria-current="page"] {
+  color: var(--todoroki-fire) !important;
+  border-bottom-color: var(--todoroki-fire) !important;
+  font-weight: 600 !important;
+}
+
+/* === ISSUES / PRs === */
+[data-testid="issue-row"]:nth-child(odd),
+.issue-list-item:nth-child(odd),
+.Box--condensed .Box-row:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: var(--todoroki-ice-bg) !important;
+}
+
+[data-testid="issue-row"]:nth-child(odd) a {
+  color: var(--todoroki-ice) !important;
+}
+
+[data-testid="issue-row"]:nth-child(even),
+.issue-list-item:nth-child(even),
+.Box--condensed .Box-row:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: var(--todoroki-fire-bg) !important;
+}
+
+[data-testid="issue-row"]:nth-child(even) a {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === PINNED REPOS === */
+.pinned-item-list-item:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: var(--todoroki-ice-bg) !important;
+}
+
+.pinned-item-list-item:nth-child(odd) a {
+  color: var(--todoroki-ice) !important;
+}
+
+.pinned-item-list-item:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: var(--todoroki-fire-bg) !important;
+}
+
+.pinned-item-list-item:nth-child(even) a {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === SIDEBAR === */
+.Layout-sidebar .Box,
+.Layout-sidebar .border {
+  border-color: var(--todoroki-ice) !important;
+}
+
+.Layout-sidebar a:nth-child(odd) {
+  color: var(--todoroki-ice) !important;
+}
+
+.Layout-sidebar a:nth-child(even) {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === BUTTONS === */
+.btn-primary,
+[data-testid="submit-button"] {
+  background: linear-gradient(90deg, var(--todoroki-ice) 0%, var(--todoroki-fire) 100%) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn:nth-of-type(odd) {
+  border-color: var(--todoroki-ice) !important;
+  color: var(--todoroki-ice) !important;
+}
+
+.btn:nth-of-type(even) {
+  border-color: var(--todoroki-fire) !important;
+  color: var(--todoroki-fire) !important;
+}
+
+/* === COMMIT LIST === */
+.commit .commit-title a,
+.commit-message a {
+  color: var(--todoroki-ice) !important;
+}
+
+.commit:nth-child(even) .commit-title a {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === BADGES / LABELS === */
+.Label--outline:nth-child(odd) {
+  border-color: var(--todoroki-ice) !important;
+  color: var(--todoroki-ice) !important;
+}
+
+.Label--outline:nth-child(even) {
+  border-color: var(--todoroki-fire) !important;
+  color: var(--todoroki-fire) !important;
+}

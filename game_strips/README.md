@@ -1,7 +1,1 @@
-# Game Strips
-
-Game-themed design elements for the GX Corner / game strip area.
-
-**Structure:** Add assets and reference in manifest. Check Opera GX mod docs for game_strips payload structure.
-
-**Ideas:** Ice/fire gradient strip, MHA-inspired game card styling.
+Unused in this build. Game strip assets are not declared in this schema 1 manifest.

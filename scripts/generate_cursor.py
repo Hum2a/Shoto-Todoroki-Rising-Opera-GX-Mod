@@ -4,7 +4,7 @@ Generates a Todoroki-style cursor (ice/fire gradient arrow).
 Run: pip install Pillow && python scripts/generate_cursor.py
 
 Output: cursor/default.png
-Also updates webmods/cursor.css with embedded base64 data URL.
+Also updates webmodding/cursor.css with embedded base64 data URL.
 """
 import os
 import base64
@@ -17,7 +17,7 @@ except ImportError:
 
 SIZE = 32
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "cursor")
-WEBMODS_DIR = os.path.join(os.path.dirname(__file__), "..", "webmods")
+WEBMODS_DIR = os.path.join(os.path.dirname(__file__), "..", "webmodding")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Todoroki colors

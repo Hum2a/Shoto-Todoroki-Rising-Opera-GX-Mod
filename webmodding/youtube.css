@@ -1,0 +1,283 @@
+/* Shouto Todoroki Rising — YouTube — Full redesign
+   Odd = icy blue, Even = fiery red */
+
+/* YouTube design tokens — required for current yt-spec theming (see Izuku youtube.css) */
+:root,
+ytd-app,
+ytd-watch-flexy,
+#content,
+#page-manager {
+  --yt-spec-base-background: #0a1628 !important;
+  --yt-spec-general-background-a: #0a1628 !important;
+  --yt-spec-general-background-b: #0f2844 !important;
+  --yt-spec-general-background-c: #051018 !important;
+  --yt-spec-raised-background: #0f2844 !important;
+  --yt-spec-menu-background: #0a1628 !important;
+  --yt-spec-brand-background-solid: #0a1628 !important;
+  --yt-spec-badge-chip-background: rgba(79, 195, 247, 0.22) !important;
+  --yt-spec-brand-text-primary: #4fc3f7 !important;
+  --yt-spec-call-to-action: #4fc3f7 !important;
+  --yt-spec-static-brand-red: #ff7043 !important;
+  --yt-spec-themed-blue: #4fc3f7 !important;
+  --yt-spec-text-primary: #e8eef4 !important;
+  --yt-spec-text-secondary: #8eb4d4 !important;
+  --yt-spec-10-percent-layer: #0f2844 !important;
+  --yt-spec-additive-background: rgba(79, 195, 247, 0.12) !important;
+}
+
+body,
+ytd-app,
+#content,
+#page-manager,
+ytd-browse,
+ytd-watch-flexy {
+  background-color: #0a1628 !important;
+}
+
+:root {
+  --todoroki-ice: #4FC3F7;
+  --todoroki-ice-bg: rgba(79, 195, 247, 0.25);
+  --todoroki-ice-dark: #0D47A1;
+  --todoroki-fire: #FF5722;
+  --todoroki-fire-bg: rgba(255, 87, 34, 0.25);
+  --todoroki-fire-dark: #BF360C;
+}
+
+/* === HEADER / MASTHEAD === */
+#masthead-container,
+ytd-masthead,
+#header.ytd-masthead,
+ytd-app {
+  --yt-spec-base-background: transparent !important;
+}
+
+#masthead-container,
+ytd-masthead,
+#header.ytd-masthead {
+  background: linear-gradient(90deg, #0D47A1 0%, #4FC3F7 25%, #81D4FA 50%, #FF8A65 75%, #BF360C 100%) !important;
+  border-bottom: 2px solid rgba(79, 195, 247, 0.5) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+#container.ytd-masthead,
+ytd-searchbox,
+#search-form {
+  background: transparent !important;
+}
+
+#search-icon-legacy,
+.ytd-searchbox button {
+  background: var(--todoroki-ice-bg) !important;
+  border-color: var(--todoroki-ice) !important;
+  color: var(--todoroki-ice) !important;
+}
+
+#search-icon-legacy:hover,
+.ytd-searchbox button:hover {
+  background: var(--todoroki-fire-bg) !important;
+  border-color: var(--todoroki-fire) !important;
+  color: var(--todoroki-fire) !important;
+}
+
+/* Top nav icons */
+#top-level-buttons-computed button,
+ytd-topbar-menu-button-renderer button,
+#buttons ytd-button-renderer {
+  color: var(--todoroki-ice) !important;
+}
+
+#top-level-buttons-computed button:nth-child(even),
+ytd-topbar-menu-button-renderer:nth-child(even) button {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === SIDEBAR === */
+ytd-guide-renderer,
+#guide-content,
+#sections {
+  background: linear-gradient(180deg, rgba(13, 71, 161, 0.2) 0%, transparent 100%) !important;
+  border-right: 1px solid rgba(79, 195, 247, 0.3) !important;
+}
+
+ytd-guide-entry-renderer:nth-child(odd) #endpoint,
+ytd-guide-entry-renderer:nth-child(odd) a,
+ytd-guide-section-renderer:nth-child(odd) a {
+  color: var(--todoroki-ice) !important;
+}
+
+ytd-guide-entry-renderer:nth-child(odd):hover,
+ytd-guide-entry-renderer:nth-child(odd).ytd-guide-entry-renderer[active] {
+  background: var(--todoroki-ice-bg) !important;
+  border-left: 4px solid var(--todoroki-ice) !important;
+}
+
+ytd-guide-entry-renderer:nth-child(even) #endpoint,
+ytd-guide-entry-renderer:nth-child(even) a,
+ytd-guide-section-renderer:nth-child(even) a {
+  color: var(--todoroki-fire) !important;
+}
+
+ytd-guide-entry-renderer:nth-child(even):hover,
+ytd-guide-entry-renderer:nth-child(even).ytd-guide-entry-renderer[active] {
+  background: var(--todoroki-fire-bg) !important;
+  border-left: 4px solid var(--todoroki-fire) !important;
+}
+
+/* === VIDEO GRID / HOMEPAGE === */
+ytd-rich-item-renderer:nth-child(odd),
+ytd-video-renderer:nth-child(odd),
+ytd-grid-video-renderer:nth-child(odd),
+ytd-compact-video-renderer:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 50%) !important;
+  border-radius: 4px !important;
+}
+
+ytd-rich-item-renderer:nth-child(odd):hover,
+ytd-video-renderer:nth-child(odd):hover {
+  background: linear-gradient(90deg, rgba(79, 195, 247, 0.4) 0%, transparent 50%) !important;
+  box-shadow: 0 4px 12px rgba(79, 195, 247, 0.2) !important;
+}
+
+ytd-rich-item-renderer:nth-child(even),
+ytd-video-renderer:nth-child(even),
+ytd-grid-video-renderer:nth-child(even),
+ytd-compact-video-renderer:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: linear-gradient(90deg, var(--todoroki-fire-bg) 0%, transparent 50%) !important;
+  border-radius: 4px !important;
+}
+
+ytd-rich-item-renderer:nth-child(even):hover,
+ytd-video-renderer:nth-child(even):hover {
+  background: linear-gradient(90deg, rgba(255, 87, 34, 0.4) 0%, transparent 50%) !important;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.2) !important;
+}
+
+/* Video titles */
+ytd-rich-item-renderer:nth-child(odd) #video-title,
+ytd-video-renderer:nth-child(odd) #video-title,
+ytd-grid-video-renderer:nth-child(odd) #video-title,
+ytd-rich-item-renderer:nth-child(odd) #video-title-link {
+  color: var(--todoroki-ice) !important;
+}
+
+ytd-rich-item-renderer:nth-child(even) #video-title,
+ytd-video-renderer:nth-child(even) #video-title,
+ytd-grid-video-renderer:nth-child(even) #video-title,
+ytd-rich-item-renderer:nth-child(even) #video-title-link {
+  color: var(--todoroki-fire) !important;
+}
+
+/* Thumbnail borders */
+ytd-rich-item-renderer:nth-child(odd) #thumbnail,
+ytd-video-renderer:nth-child(odd) #thumbnail,
+ytd-grid-video-renderer:nth-child(odd) #thumbnail {
+  border: 2px solid var(--todoroki-ice) !important;
+  border-radius: 8px !important;
+}
+
+ytd-rich-item-renderer:nth-child(even) #thumbnail,
+ytd-video-renderer:nth-child(even) #thumbnail,
+ytd-grid-video-renderer:nth-child(even) #thumbnail {
+  border: 2px solid var(--todoroki-fire) !important;
+  border-radius: 8px !important;
+}
+
+/* === CHIPS / FILTERS === */
+ytd-chip-cloud-chip-renderer:nth-child(odd) #content,
+ytd-chip-cloud-chip-renderer:nth-child(odd) button {
+  border: 2px solid var(--todoroki-ice) !important;
+  color: var(--todoroki-ice) !important;
+  background: var(--todoroki-ice-bg) !important;
+}
+
+ytd-chip-cloud-chip-renderer:nth-child(odd):hover,
+ytd-chip-cloud-chip-renderer:nth-child(odd)[selected] {
+  background: var(--todoroki-ice-bg) !important;
+  border-color: var(--todoroki-ice) !important;
+}
+
+ytd-chip-cloud-chip-renderer:nth-child(even) #content,
+ytd-chip-cloud-chip-renderer:nth-child(even) button {
+  border: 2px solid var(--todoroki-fire) !important;
+  color: var(--todoroki-fire) !important;
+  background: var(--todoroki-fire-bg) !important;
+}
+
+ytd-chip-cloud-chip-renderer:nth-child(even):hover,
+ytd-chip-cloud-chip-renderer:nth-child(even)[selected] {
+  background: var(--todoroki-fire-bg) !important;
+  border-color: var(--todoroki-fire) !important;
+}
+
+/* === SHORTS === */
+ytd-reel-item-renderer:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+}
+
+ytd-reel-item-renderer:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+}
+
+/* === COMMENTS === */
+ytd-comment-renderer:nth-child(odd),
+ytd-comment-thread-renderer:nth-child(odd) {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: linear-gradient(90deg, var(--todoroki-ice-bg) 0%, transparent 50%) !important;
+  padding-left: 12px !important;
+}
+
+ytd-comment-renderer:nth-child(odd) #author-text,
+ytd-comment-renderer:nth-child(odd) #content-text a {
+  color: var(--todoroki-ice) !important;
+}
+
+ytd-comment-renderer:nth-child(even),
+ytd-comment-thread-renderer:nth-child(even) {
+  border-left: 4px solid var(--todoroki-fire) !important;
+  background: linear-gradient(90deg, var(--todoroki-fire-bg) 0%, transparent 50%) !important;
+  padding-left: 12px !important;
+}
+
+ytd-comment-renderer:nth-child(even) #author-text,
+ytd-comment-renderer:nth-child(even) #content-text a {
+  color: var(--todoroki-fire) !important;
+}
+
+/* === PLAYER PAGE === */
+#secondary ytd-video-secondary-info-renderer {
+  border-left: 4px solid var(--todoroki-ice) !important;
+  background: var(--todoroki-ice-bg) !important;
+  padding: 12px !important;
+}
+
+#secondary ytd-playlist-renderer:nth-child(odd),
+#secondary ytd-playlist-panel-video-renderer:nth-child(odd) {
+  border-left: 3px solid var(--todoroki-ice) !important;
+}
+
+#secondary ytd-playlist-renderer:nth-child(even),
+#secondary ytd-playlist-panel-video-renderer:nth-child(even) {
+  border-left: 3px solid var(--todoroki-fire) !important;
+}
+
+/* === BUTTONS === */
+ytd-button-renderer button,
+paper-button,
+yt-formatted-string[role="button"] {
+  color: var(--todoroki-ice) !important;
+}
+
+ytd-button-renderer:nth-child(even) button,
+paper-button:nth-of-type(even) {
+  color: var(--todoroki-fire) !important;
+}
+
+/* Subscribe button */
+ytd-subscribe-button-renderer paper-button,
+#subscribe-button {
+  background: linear-gradient(90deg, var(--todoroki-ice) 0%, var(--todoroki-fire) 100%) !important;
+  border: none !important;
+  color: white !important;
+}

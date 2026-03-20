@@ -16,8 +16,6 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.join(SCRIPT_DIR, "..")
 SRC = os.path.join(PROJECT_ROOT, "todoroki.jpg")
 OUTPUT = os.path.join(PROJECT_ROOT, "icon_512.png")
-APP_ICON_SIZE = 290
-APP_ICON_OUTPUT = os.path.join(PROJECT_ROOT, "app_icon_290.png")
 
 if not os.path.exists(SRC):
     print(f"Source image not found: {SRC}")
@@ -43,7 +41,3 @@ else:
 
 icon.save(OUTPUT)
 print(f"Created: {OUTPUT}")
-
-app = icon.resize((APP_ICON_SIZE, APP_ICON_SIZE), Image.Resampling.LANCZOS)
-app.save(APP_ICON_OUTPUT)
-print(f"Created: {APP_ICON_OUTPUT} (for app_icon payload)")

@@ -1,52 +1,18 @@
 {
+  "manifest_version": 3,
   "name": "Shouto Todoroki Rising",
-  "description": "A true homage to Shouto Todoroki from My Hero Academia — half ice, half fire. Ice blue accent theme with fire red secondary, static ice-to-fire gradient wallpaper, custom ice/fire cursor on 12 webmod sites (YouTube, GitHub, Google, Reddit, X, Wikipedia, Stack Overflow, Twitch, Discord, Amazon, Spotify, LinkedIn), and alternating ice/fire styling on lists and cards. Plus Ultra.",
-  "developer": {
-    "name": "Your Name"
-  },
+  "description": "Shouto Todoroki — ice/fire theme, wallpaper, background music, and webmodding.",
+  "version": "1.1.2",
   "icons": {
     "512": "icon_512.png"
   },
-  "manifest_version": 3,
-  "host_permissions": [
-    "*://*.youtube.com/*",
-    "*://youtube.com/*",
-    "*://*.github.com/*",
-    "*://github.com/*",
-    "*://*.google.com/*",
-    "*://google.com/*",
-    "*://*.reddit.com/*",
-    "*://reddit.com/*",
-    "*://twitter.com/*",
-    "*://x.com/*",
-    "*://*.wikipedia.org/*",
-    "*://wikipedia.org/*",
-    "*://*.stackoverflow.com/*",
-    "*://stackoverflow.com/*",
-    "*://*.stackexchange.com/*",
-    "*://*.twitch.tv/*",
-    "*://twitch.tv/*",
-    "*://*.discord.com/*",
-    "*://discord.com/*",
-    "*://*.amazon.com/*",
-    "*://*.amazon.co.uk/*",
-    "*://amazon.com/*",
-    "*://*.spotify.com/*",
-    "*://open.spotify.com/*",
-    "*://*.linkedin.com/*",
-    "*://linkedin.com/*"
-  ],
+  "developer": {
+    "name": "Humza Butt"
+  },
   "mod": {
-    "license": "license.txt",
     "schema_version": 1,
+    "license": "license.txt",
     "payload": {
-      "background_music": [
-        "music/Todorokis Counterattack.mp3"
-      ],
-      "theme": {
-        "dark": { "gx_accent": { "h": 199, "s": 89, "l": 62 }, "gx_secondary_base": { "h": 14, "s": 91, "l": 16 } },
-        "light": { "gx_accent": { "h": 199, "s": 70, "l": 45 }, "gx_secondary_base": { "h": 14, "s": 60, "l": 28 } }
-      },
       "wallpaper": {
         "dark": {
           "image": "wallpaper/shoto-todoroki.3840x2160.mp4",
@@ -61,21 +27,100 @@
           "text_shadow": "#E3F2FD"
         }
       },
+      "background_music": [
+        "music/Todorokis_Counterattack.mp3"
+      ],
+      "theme": {
+        "dark": {
+          "gx_accent": { "h": 199, "s": 89, "l": 62 },
+          "gx_secondary_base": { "h": 14, "s": 91, "l": 16 }
+        },
+        "light": {
+          "gx_accent": { "h": 199, "s": 70, "l": 45 },
+          "gx_secondary_base": { "h": 14, "s": 60, "l": 28 }
+        }
+      },
       "page_styles": [
-        { "css": ["webmods/cursor.css", "webmods/youtube.css"], "matches": ["https://www.youtube.com/*", "https://youtube.com/*", "https://m.youtube.com/*"] },
-        { "css": ["webmods/cursor.css", "webmods/github.css"], "matches": ["https://github.com/*", "https://www.github.com/*", "https://*.github.com/*"] },
-        { "css": ["webmods/cursor.css", "webmods/google.css"], "matches": ["https://www.google.com/*", "https://google.com/*", "https://www.google.co.uk/*"] },
-        { "css": ["webmods/cursor.css", "webmods/reddit.css"], "matches": ["https://www.reddit.com/*", "https://reddit.com/*", "https://old.reddit.com/*"] },
-        { "css": ["webmods/cursor.css", "webmods/twitter.css"], "matches": ["https://twitter.com/*", "https://x.com/*"] },
-        { "css": ["webmods/cursor.css", "webmods/wikipedia.css"], "matches": ["https://*.wikipedia.org/*", "https://wikipedia.org/*"] },
-        { "css": ["webmods/cursor.css", "webmods/stackoverflow.css"], "matches": ["https://stackoverflow.com/*", "https://*.stackoverflow.com/*", "https://stackexchange.com/*"] },
-        { "css": ["webmods/cursor.css", "webmods/twitch.css"], "matches": ["https://www.twitch.tv/*", "https://twitch.tv/*"] },
-        { "css": ["webmods/cursor.css", "webmods/discord.css"], "matches": ["https://discord.com/*", "https://*.discord.com/*"] },
-        { "css": ["webmods/cursor.css", "webmods/amazon.css"], "matches": ["https://www.amazon.com/*", "https://amazon.com/*", "https://*.amazon.co.uk/*"] },
-        { "css": ["webmods/cursor.css", "webmods/spotify.css"], "matches": ["https://open.spotify.com/*", "https://*.spotify.com/*"] },
-        { "css": ["webmods/cursor.css", "webmods/linkedin.css"], "matches": ["https://www.linkedin.com/*", "https://linkedin.com/*"] }
+        {
+          "css": ["webmodding/theme.css", "webmodding/opera.css"],
+          "matches": ["https://*.opera.com/*"]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/youtube.css"],
+          "matches": [
+            "https://*.youtube.com/*",
+            "https://www.youtube.com/*",
+            "https://youtube.com/*",
+            "https://m.youtube.com/*",
+            "https://*.youtu.be/*",
+            "https://youtu.be/*"
+          ]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/github.css"],
+          "matches": [
+            "https://github.com/*",
+            "https://www.github.com/*",
+            "https://*.github.com/*"
+          ]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/google.css"],
+          "matches": [
+            "https://*.google.com/*",
+            "https://*.google.co.uk/*",
+            "https://*.google.ca/*",
+            "https://mail.google.com/*",
+            "https://drive.google.com/*"
+          ]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/reddit.css"],
+          "matches": ["https://*.reddit.com/*", "https://*.redd.it/*"]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/twitter.css"],
+          "matches": ["https://twitter.com/*", "https://x.com/*", "https://*.twitter.com/*"]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/wikipedia.css"],
+          "matches": ["https://*.wikipedia.org/*", "https://*.wikimedia.org/*"]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/stackoverflow.css"],
+          "matches": [
+            "https://stackoverflow.com/*",
+            "https://*.stackoverflow.com/*",
+            "https://stackexchange.com/*",
+            "https://*.stackexchange.com/*"
+          ]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/twitch.css"],
+          "matches": ["https://*.twitch.tv/*"]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/discord.css"],
+          "matches": ["https://discord.com/*", "https://*.discord.com/*"]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/amazon.css"],
+          "matches": [
+            "https://*.amazon.com/*",
+            "https://*.amazon.co.uk/*",
+            "https://*.amazon.ca/*",
+            "https://*.amazon.de/*"
+          ]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/spotify.css"],
+          "matches": ["https://open.spotify.com/*", "https://*.spotify.com/*"]
+        },
+        {
+          "css": ["webmodding/theme.css", "webmodding/cursor.css", "webmodding/linkedin.css"],
+          "matches": ["https://*.linkedin.com/*"]
+        }
       ]
     }
-  },
-  "version": "1.0"
+  }
 }
