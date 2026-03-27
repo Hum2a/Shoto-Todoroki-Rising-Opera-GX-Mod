@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Shouto Todoroki Rising",
   "description": "Shouto Todoroki — ice/fire theme, wallpaper, background music, and webmodding.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "icons": {
     "512": "icon_512.png"
   },
