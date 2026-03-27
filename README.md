@@ -1,39 +1,42 @@
 # Shouto Todoroki Rising — Opera GX Mod (schema 1)
 
-Ice/fire theme, wallpaper, background music, and **web modding** via `page_styles` only.
+Ice/fire theme, wallpaper, background music, and **web modding** via `page_styles` using the **bucket layout** (global sheet + `sites-01` … `sites-06`), aligned with **Great Glacial Aegir**, Ochaco, and Hagakure mods.
 
-## Web modding
+## Web modding (bucket layout)
 
-| Path | Role |
+| File | Role |
 |------|------|
-| `webmodding/theme.css` | Shared CSS variables |
-| `webmodding/opera.css` | Opera sites (`*.opera.com`) — quick injection check |
-| `webmodding/cursor.css` | Custom cursor on modded sites |
-| `webmodding/<site>.css` | Per-site styling |
+| `webmodding/shoto-rising.css` | All pages: links, selection, scrollbars, ice + ember mist |
+| `webmodding/sites-01-google-youtube.css` | Google suite + YouTube |
+| `webmodding/sites-02-social.css` | Reddit, X, Facebook, Instagram, TikTok, Discord, Pinterest, Tumblr, LinkedIn, Threads |
+| `webmodding/sites-03-dev.css` | GitHub, GitLab, Stack Overflow / Exchange, Hacker News |
+| `webmodding/sites-04-shopping.css` | Amazon regions, eBay, PayPal, Apple |
+| `webmodding/sites-05-media.css` | Netflix, Spotify, Twitch, BBC, CNN, IMDb, Medium |
+| `webmodding/sites-06-productivity.css` | Wikipedia, Notion, Dropbox, Microsoft / Outlook / Yahoo, Steam, Craigslist, Indeed |
 
-After editing CSS, reload the mod (unpacked folder or new zip) in **opera://extensions**.
+Reload the mod in **opera://extensions** after edits. Enable **web modding** for this mod under **Mods**.
+
+**Optional cursor:** `python scripts/generate_cursor.py` writes `webmodding/cursor-optional.css`. Add it to `page_styles` in `manifest.json` only if you want the data-URL ice/fire arrow everywhere.
 
 ### Webmodding works in Izuku but not Shouto?
 
-Opera GX applies **page styles per mod**. Open **Mods** (or Easy Setup → Mods), select **Shouto Todoroki Rising**, and ensure **website / web modding / web design** (wording varies by version) is **turned on** for that mod. If only wallpaper or theme is enabled, YouTube and GitHub stay default.
+Opera applies **page styles per mod**. Select **Shouto Todoroki Rising** and turn on website / web modding. Disable other mods while testing if your build only injects one mod’s styles.
 
-Also **disable or remove Izuku** while testing Shouto—some builds only inject one mod’s page styles at a time.
+Background music: `music/Todorokis_Counterattack.mp3` (no spaces in filename).
 
-Background music file has no spaces: `music/Todorokis_Counterattack.mp3` (spaces in paths can break loaders).
-
-**Settings vs Mods:** There are two places that mention web modding (Settings search and **Mods → Effects → Web modding**). Both need to allow it. After changing `manifest.json`, remove the mod in **opera://extensions** and **Load unpacked** again, then open a **new** tab (not an old pinned YouTube tab).
+**Settings vs Mods:** After `manifest.json` changes, remove and **Load unpacked** again, then open a **new** tab.
 
 ## Project layout
 
 ```
 Shouto Todoroki Rising/
-├── manifest.json       # schema_version 1, payload.page_styles only for the web
+├── manifest.json
 ├── license.txt
 ├── icon_512.png
 ├── webmodding/
 ├── wallpaper/
 ├── music/
-└── scripts/            # generate_wallpaper.py, generate_icon.py, generate_cursor.py, …
+└── scripts/
 ```
 
 ## Scripts

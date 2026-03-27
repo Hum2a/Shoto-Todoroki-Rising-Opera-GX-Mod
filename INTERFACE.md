@@ -1,9 +1,8 @@
 # Web modding (schema 1)
 
-This mod uses **`mod.payload.page_styles`** only — no Mods 2.0 / schema 2 interface fields.
+Ann-style **bucket CSS** (same pattern as Great Glacial Aegir / Ochaco / Hagakure):
 
-- **CSS:** `webmodding/*.css` (see `manifest.json` → `page_styles`).
-- **Shared variables:** `webmodding/theme.css` (optional include per site).
-- **Opera pages:** `webmodding/opera.css` matches `https://*.opera.com/*` — useful to confirm injection is working before debugging YouTube/GitHub.
+- **`webmodding/shoto-rising.css`** — global layer on all `https://` / `http://` pages (ice/fire mist, links, selection, scrollbars).
+- **`webmodding/sites-01` … `sites-06`** — host-specific tweaks (`manifest.json` → `page_styles`).
 
-Regenerate the in-page cursor after changing the PNG: `python scripts/generate_cursor.py`.
+Optional cursor: `python scripts/generate_cursor.py` → `cursor-optional.css`; add that file to `page_styles` if you want the embedded arrow.

@@ -4,7 +4,7 @@ Generates a Todoroki-style cursor (ice/fire gradient arrow).
 Run: pip install Pillow && python scripts/generate_cursor.py
 
 Output: cursor/default.png
-Also updates webmodding/cursor.css with embedded base64 data URL.
+Writes webmodding/cursor-optional.css (not in manifest by default — add to page_styles if wanted).
 """
 import os
 import base64
@@ -63,11 +63,11 @@ try:
 except ImportError:
     print("Optional: pip install win-cur to generate cursor/default.cur for native browser cursor")
 
-# Generate base64 and update cursor.css
+# Optional data-URL sheet (not in manifest unless you add it to page_styles)
 with open(png_path, "rb") as f:
     data_url = "data:image/png;base64," + base64.b64encode(f.read()).decode()
 
-cursor_css = f'''/* Shouto Todoroki Rising — Custom cursor (ice/fire gradient arrow) */
+cursor_css = f'''/* Shouto Todoroki Rising — optional ice/fire cursor (add to manifest to use) */
 
 html,
 body {{
@@ -84,7 +84,7 @@ input[type="button"],
 }}
 '''
 
-css_path = os.path.join(WEBMODS_DIR, "cursor.css")
-with open(css_path, "w") as f:
+css_path = os.path.join(WEBMODS_DIR, "cursor-optional.css")
+with open(css_path, "w", encoding="utf-8") as f:
     f.write(cursor_css)
 print(f"Updated: {css_path}")

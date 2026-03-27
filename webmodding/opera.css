@@ -1,6 +1,0 @@
-/* Opera / GX pages — uses browser-provided accent (same pattern as Opera mod template) */
-body,
-a {
-  color: env(-opera-gx-accent-color, var(--todoroki-ice)) !important;
-  background: env(-opera-gx-background-color, var(--todoroki-bg-dark)) !important;
-}

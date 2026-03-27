@@ -1,0 +1,93 @@
+/* Shouto Todoroki Rising — ice / fire duality, Opera env() fallbacks */
+
+:root {
+  --shoto-ice: #4fc3f7;
+  --shoto-ice-deep: #0277bd;
+  --shoto-frost: #b3e5fc;
+  --shoto-fire-mist: rgba(255, 87, 34, 0.12);
+  --shoto-ice-mist: rgba(79, 195, 247, 0.14);
+}
+
+@keyframes glacial-mist-shift {
+  0% {
+    opacity: 0.55;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04) translate3d(1.5%, -1%, 0);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.08) translate3d(-1%, 1.2%, 0);
+  }
+}
+
+html {
+  position: relative;
+}
+
+/* Ice glow + ember undertone */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(80% 60% at 15% 20%, var(--shoto-ice-mist), transparent 55%),
+    radial-gradient(70% 55% at 85% 75%, var(--shoto-fire-mist), transparent 50%),
+    linear-gradient(
+      118deg,
+      color-mix(in srgb, env(-opera-gx-accent-color, var(--shoto-ice)) 12%, transparent),
+      color-mix(in srgb, env(-opera-gx-background-color, var(--shoto-frost)) 18%, transparent)
+    );
+  animation: shoto-rising-mist-shift 22s ease-in-out infinite alternate;
+}
+
+a:any-link {
+  color: env(-opera-gx-accent-color, var(--shoto-ice));
+}
+
+a:any-link:hover {
+  color: color-mix(in srgb, env(-opera-gx-accent-color, var(--shoto-ice)) 82%, white);
+}
+
+:focus-visible {
+  outline: 2px solid env(-opera-gx-accent-color, var(--shoto-ice));
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, env(-opera-gx-accent-color, var(--shoto-ice)) 38%, transparent);
+  color: inherit;
+}
+
+* {
+  scrollbar-color: color-mix(in srgb, env(-opera-gx-accent-color, var(--shoto-ice)) 55%, transparent)
+    color-mix(in srgb, env(-opera-gx-background-color, var(--shoto-frost)) 35%, transparent);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: color-mix(in srgb, env(-opera-gx-background-color, var(--shoto-frost)) 25%, transparent);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    env(-opera-gx-accent-color, var(--shoto-ice)),
+    color-mix(in srgb, env(-opera-gx-accent-color, var(--shoto-ice)) 45%, #ff7043)
+  );
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: env(-opera-gx-accent-color, var(--shoto-ice));
+}
+
+/* Site bundles: sites-01 … sites-06 (manifest URL patterns). */
